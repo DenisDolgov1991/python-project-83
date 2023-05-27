@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hexlet-code"
+version = "0.1.0"
+description = ""
+authors = ["DenisDolgov1991 <dolgovdenis1991@yandex.ru>"]
+readme = "README.md"
+packages = [
+  { include = "page_analyzer" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
