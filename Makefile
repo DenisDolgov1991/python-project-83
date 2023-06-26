@@ -14,7 +14,7 @@ package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
 
 reinstall:
-	python3 -m pip install --user --force-reinstall dist/*.whl
+	python3 -m pip install --force-reinstall dist/*.whl
 
 dev:
 	poetry run flask --app page_analyzer:app run
