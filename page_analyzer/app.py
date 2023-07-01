@@ -21,10 +21,6 @@ PGHOST = os.getenv('Host')
 DATABASE_URL = os.getenv('Database')
 
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-
-
 def open_connection():
     with psycopg2.connect(
         user=PGUSER
