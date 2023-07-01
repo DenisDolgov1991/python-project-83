@@ -23,9 +23,9 @@ DATABASE_URL = os.getenv('Database')
 
 def open_connection():
     with psycopg2.connect(
-        user=PGUSER
-        password=PGPASSWORD
-        host=PGHOST
+        user=PGiUSER,
+        password=PGPASSWORD,
+        host=PGHOST,
         database=DATABASE_URL
     ) as conn:
         return conn
