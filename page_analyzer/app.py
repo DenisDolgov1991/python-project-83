@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 import psycopg2
 import requests
 from page_analyzer import urls_repo
@@ -15,16 +14,24 @@ from flask import (
     get_flashed_messages
 )
 
-load_dotenv()
+
+PGPASSWORD = os.getenv('Password')
+PGUSER = os.getenv('User ID')
+PGHOST = os.getenv('Host')
+DATABASE_URL = os.getenv('Database')
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
-DATABASE_URL = os.getenv('DATABASE_URL')
-
 
 def open_connection():
-    with psycopg2.connect(DATABASE_URL) as conn:
+    with psycopg2.connect(
+        user=PGUSER
+        password=PGPASSWORD
+        host=PGHOST
+        database=DATABASE_URL
+    ) as conn:
         return conn
 
 
